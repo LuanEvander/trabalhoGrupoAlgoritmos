@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class App{
     public static void main(String[] args){
-        try(Scanner sc = new Scanner(System.in)){            
+        //Bloco try para tratamento de erros da lib .Scanner
+        try(Scanner sc = new Scanner(System.in)){
             String opcao = "".toLowerCase();
             int acertos = 0, erros = 0;
             String volta = "".toLowerCase();
@@ -39,7 +40,7 @@ public class App{
                                 default:
                                     System.out.println("Resposta inválida." + "\n");
                                 break;  
-                            }//Fim
+                            }//Fim da primeira pergunta
                             
                             //Segunda pergunta
                             System.out.println("2 - O Brasil possui muitas conquistas na Formula 1. Quantos mundiais de pilotos o Brasil possui?" + "\n" + "a) 8" + "\n" + "b) 12" + "\n" + "c) 5" + "\n" + "d) 20");
@@ -58,7 +59,7 @@ public class App{
                                 default:
                                     System.out.println("Resposta inválida." + "\n");
                                 break;
-                            }//Fim
+                            }//Fim da segunda pergunta
                             
                             //Terceira pergunta
                             System.out.println("3 - Equipes de Formula 1 têm contratado pilotos cada vez mais jovens. Quantos anos tinha o piloto mais jovem a vencer uma corrida de Formula 1?" + "\n" + "a) 16" + "\n" + "b) 21" + "\n" + "c) 18" + "\n" + "d) 24");
@@ -77,10 +78,10 @@ public class App{
                                 default:
                                     System.out.println("Resposta inválida." + "\n");
                                 break;
-                            }//Fim
+                            }//Fim da terceira pergunta
                             
                             //Quarta pergunta
-                            System.out.println("4 - Ayrton Senna ficou conhecido como o Rei de Mônaco devido seu número de vitórias nesse circuito. Quantas vitórias ele obteve?" + "\n" + "a) 5" + "\n" + "b) 8" + "\n" + "c) 7" + "\n" + "d) 6");
+                            System.out.println("4 - Ayrton Senna ficou conhecido como o Rei de Mônaco devido seu número de vitórias nesse circuito. Quantas vitórias ele obteve?" + "\n" + "a) 4" + "\n" + "b) 8" + "\n" + "c) 7" + "\n" + "d) 6");
                             System.out.print("Opção: ");
                             opcao = sc.next().toLowerCase();
 
@@ -90,13 +91,13 @@ public class App{
                                     acertos = acertos + 1;
                                 break;
                                 case "a": case "b": case "c":
-                                    System.out.println("Resposta Errada! Ayrton Senna ." + "\n");
+                                    System.out.println("Resposta Errada! Ayrton Senna venceu 5 vezes consecutivas." + "\n");
                                     erros = erros + 1;
                                 break;
                                 default:
                                     System.out.println("Resposta inválida." + "\n");
                                 break;
-                            }//Fim
+                            }//Fim da quarta pergunta
                             
                             //Quinta pergunta
                             System.out.println("5 - O pit stop na Formula 1 é muito conhecido por sua eficiência. Qual o pit stop mais rápido já executado durante uma corrida?" + "\n" + "a) 2,56s" + "\n" + "b) 1,82s" + "\n" + "c) 0,97s" + "\n" + "d) 3,14");
@@ -115,12 +116,14 @@ public class App{
                                 default:
                                     System.out.println("Resposta inválida." + "\n");
                                 break;
-                            }//Fim do Quiz sobre Formula 1
+                            }//Fim da quinta pergunta
+                            //Fim do Quiz sobre Formula 1
                             
                             //Resultado do quiz
                             System.out.println("Total de acertos: " + acertos);
                             System.out.println("Total de erros: " + erros + "\n");
 
+                            //Bloco para repetir o quiz atual
                             System.out.println("\n\nDeseja refazer esse quiz?" + "\n" + "[s] Sim" + "\n" + "[n] Não");
                             System.out.println("Opção: ");
                             opcao = sc.next().toLowerCase();
@@ -154,8 +157,9 @@ public class App{
                                     default:
                                         System.out.println("Resposta inválida." + "\n");
                                     break; 
-                                }//Fim
-                    
+                                }//Fim da primeira pergunta
+                                
+                                //Segunda pergunta
                                 System.out.println("Questao 2: " + "\n 2) Quais destes autores não escreve filosofia:" + "\na) Sartre " + "\n b) Camus" + "\nc) Shakespeare" + "\nd) Kant");
                                 System.out.println("Digite sua resposta:");
                                 opcao = sc.next().toLowerCase();
@@ -174,8 +178,9 @@ public class App{
                                     default:
                                         System.out.println("Resposta inválida." + "\n");
                                     break; 
-                                }//Fim
+                                }//Fim da segunda pergunta
                                 
+                                //Terceira pergunta
                                 System.out.println("Questao 3: Quais destes autores não pertence à Grecia antiga:" + "\n a)Epiteto" + "\nb)Platao" + "\n  c) Sócrates " + "\n  d)Maquiavel");
                                 System.out.println("Digite sua resposta:");
                                 opcao = sc.next().toLowerCase();
@@ -194,8 +199,9 @@ public class App{
                                     default:
                                         System.out.println("Resposta inválida." + "\n");
                                     break; 
-                                }//Fim
+                                }//Fim da terceira pergunta
                                 
+                                //Quarta Pergunta
                                 System.out.println("Questão 4: Quem é o autor da frase \"Tudo flui\"?" + "\na) heraclito" + "\nb) Epiteto" + "\nc) Parmindes" + "\nd) Zenao de Heleia");
                                 System.out.println("Digite sua resposta:");
                                 opcao = sc.next().toLowerCase();
@@ -214,8 +220,9 @@ public class App{
                                     default:
                                         System.out.println("Resposta inválida." + "\n");
                                     break; 
-                                }//Fim
+                                }//Fim da quarta pergunta
                                 
+                                //Quinta pergunta
                                 System.out.println("Questão 5: Quem é o autor da frase \"Os fins justificam os meios\"" + "\na)Hanna Arendt" + "\nb) Simone de Beavouir" + "\nc) Karl Marx" + "\nd) Nicolau Maquivel");
                                 System.out.println("Digite sua resposta:");
                                 opcao = sc.next().toLowerCase();
@@ -234,11 +241,14 @@ public class App{
                                     default:
                                         System.out.println("Resposta inválida." + "\n");
                                     break; 
-                                }//Fim
+                                }//Fim da quinta pergunta
+                                //Fim do quiz de filosofia
                                 
+                                //Resultado do quiz
                                 System.out.println("Total de acertos: " + acertos);
                                 System.out.println("Total de erros: " + erros + "\n");
-
+                                
+                                //Bloco para repetir o quiz atual
                                 System.out.println("\n\nDeseja refazer esse quiz?" + "\n" + "[s] Sim" + "\n" + "[n] Não");
                                 System.out.println("Opção: ");
                                 opcao = sc.next().toLowerCase();
@@ -249,7 +259,7 @@ public class App{
                 
                     case "c":
                         do{ 
-                            //Reinicia da pontuação
+                            //Reinicia a pontuação
                             acertos = 0;
                             erros = 0;
                             
@@ -376,10 +386,10 @@ public class App{
                     break;    
                 }
 
-                System.out.println("\n\nDeseja voltar ao menu de quizes?" + "\n" + "[s] Sim" + "\n" + "[n] Não");
+                System.out.println("\n\nDeseja sair?" + "\n" + "[s] Sim" + "\n" + "[n] Não");
                 volta = sc.next().toLowerCase();    
 
-            }while(volta.equals("s"));      
+            }while(volta.equals("n"));      
         }
     }
 }
