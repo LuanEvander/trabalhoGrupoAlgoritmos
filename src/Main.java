@@ -149,7 +149,7 @@ public class Main{
                             do{                 
                                 System.out.println("Quiz de Filosofia");
                                 //Primeira pergunta
-                                System.out.println("\nQuestão 1: " + "\nQuais destes conceitos pertence a Nietzsche:" + " \n\na)Genealogia da Moral " +"\nb)Materialismo historico" + " \nc)O absurdo" + "\nd)Fenomenologia do espirito\n");
+                                System.out.println("\nQuestão 1:\nQuais destes conceitos pertence a Nietzsche \na)Genealogia da Moral \nb)Materialismo historico \nc)O absurdo \nd)Fenomenologia do espirito\n");
                                 System.out.print("Digite sua resposta:");
                                 opcao = sc.next().toLowerCase();
                                 
@@ -170,7 +170,7 @@ public class Main{
                                 }//Fim da primeira pergunta
                                 
                                 //Segunda pergunta
-                                System.out.println("\nQuestao 2: " + "\nQuais destes autores não escreve filosofia:" + "\n\na)Sartre " + "\nb)Camus" + "\nc)Shakespeare" + "\nd)Kant");
+                                System.out.println("\nQuestao 2:   \nQuais destes autores não escreve filosofia:  \na)Sartre   \nb)Camus  \nc)Shakespeare  \nd)Kant");
                                 System.out.print("Digite sua resposta:");
                                 opcao = sc.next().toLowerCase();
                                 
@@ -191,7 +191,7 @@ public class Main{
                                 }//Fim da segunda pergunta
                                 
                                 //Terceira pergunta
-                                System.out.println("\nQuestao 3: \nQuais destes autores não pertence à Grecia antiga:" + "\n\na)Epiteto" + "\nb)Platao" + "\nc)Sócrates " + "\nd)Maquiavel");
+                                System.out.println("\nQuestao 3: \nQuais destes autores não pertence à Grecia antiga:  \na)Epiteto  \nb)Platao \nc)Sócrates \nd)Maquiavel");
                                 System.out.print("Digite sua resposta:");
                                 opcao = sc.next().toLowerCase();
                                         
@@ -212,7 +212,7 @@ public class Main{
                                 }//Fim da terceira pergunta
                                 
                                 //Quarta Pergunta
-                                System.out.println("\nQuestão 4: \nQuem é o autor da frase \"Tudo flui\"?" + "\n\na)Heraclito" + "\nb)Epiteto" + "\nc)Parmindes" + "\nd)Zenao de Heleia");
+                                System.out.println("\nQuestão 4: \nQuem é o autor da frase \"Tudo flui\"?\n\na)Heraclito  \nb)Epiteto  \nc)Parmindes  \nd)Zenao de Heleia");
                                 System.out.print("Digite sua resposta:");
                                 opcao = sc.next().toLowerCase();
                                 
@@ -233,7 +233,7 @@ public class Main{
                                 }//Fim da quarta pergunta
                                 
                                 //Quinta pergunta
-                                System.out.println("\nQuestão 5: \nQuem é o autor da frase \"Os fins justificam os meios\"" + "\n\na)Hanna Arendt" + "\nb)Simone de Beavouir" + "\nc)Karl Marx" + "\nd)Nicolau Maquivel");
+                                System.out.println("\nQuestão 5: \nQuem é o autor da frase \"Os fins justificam os meios\" \na)Hanna Arendt \nb)Simone de Beavouir \nc)Karl Marx \nd)Nicolau Maquivel");
                                 System.out.print("Digite sua resposta:");
                                 opcao = sc.next().toLowerCase();
                             
