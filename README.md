@@ -21,7 +21,7 @@ Esse documento irá detalhar o funcionamento do algoritmo usado nesse repositór
 
 Um bloco `try` pode ser usado para tratar possíveis erros caso aconteçam conversões que levem à quebra da execução do algoritmo.
 
-```
+```java
     try {
         // Algoritmo que inclui comandos/invocações de métodos
         // que podem gerar uma situação de exceção.
@@ -30,7 +30,7 @@ Um bloco `try` pode ser usado para tratar possíveis erros caso aconteçam conve
 
 Nesse algoritmo o bloco try é usado na declaração da classe `Scanner`:
 
-```
+```java
     try(Scanner sc = new Scanner(System.in)){
         // Algoritmo que inclui comandos/invocações de métodos
         // que podem gerar uma situação de exceção.
@@ -41,13 +41,13 @@ Nesse algoritmo o bloco try é usado na declaração da classe `Scanner`:
 
 O algoritmo possui duas variáveis para armazenar o resultado das respostas.
 
-```
+```java
     int acertos = 0, erros = 0;
 ```
 
 Duas variáveis são usadas para receber entradas do usuário.
 
-```
+```java
     String opcao, volta;
 ```
 
@@ -55,7 +55,7 @@ Duas variáveis são usadas para receber entradas do usuário.
 
 Para garantir que o algoritmo irá executar, será utilizado o comando `Do-While`:
 
-```
+```java
     do{
         //Instruções para limpar o console
         System.out.print("\033[H\033[2J");
@@ -70,14 +70,14 @@ Para garantir que o algoritmo irá executar, será utilizado o comando `Do-While
 
 O algoritmo irá imprimir no console para o usuário selecionar um tema, com uma indicação de que ele poderá digitar uma opção:
 
-```
+```java
     System.out.println("Escolha um tema:\n(a) Formula 1\n(b) Filosofia\n(c) Jogos\n(d) Fim");
     System.out.print("Opção: ");
 ```
 
 Abaixo será executado uma linha utilizando a classe `Scanner`, cuja entrada será armazenada na variável `opcao`:
 
-```
+```java
     // .toLowerCase para forçar letras minúsculas
     // Seu uso não é possível com variáveis tipo `char`
     opcao = sc.next().toLowerCase();
@@ -87,7 +87,7 @@ Abaixo será executado uma linha utilizando a classe `Scanner`, cuja entrada ser
 
 Após selecionado um tema, o algoritmo irá executar instruções que apagam o texto exibido anteriormente no console.
 
-```
+```java
     System.out.print("\033[H\033[2J");
     System.out.flush();
 ```
@@ -100,7 +100,7 @@ Para simular uso de métodos foi utilizado o comando `Switch-Case`. Esse comando
 * Encerrar o algoritmo; ou
 * Informar que foi inserido uma entrada inválida.
 
-```
+```java
     switch(opcao){
         case "a":
             // Quiz sobre Formula 1
@@ -128,7 +128,7 @@ Vale ressaltar que no Menu de Temas uma entrada foi recebida, então, o `Switch-
 
 A estrutura de repetição de um quiz é semelhante à estrutura de repetição principal. 
 
-``` 
+```java
     case "c":
         do{
             // Quiz sobre jogos
@@ -139,7 +139,7 @@ A estrutura de repetição de um quiz é semelhante à estrutura de repetição 
 
 A forma de imprimir as perguntas no console é semelhante à forma de imprimir o Menu de Temas:
 
-```
+```java
     do{ 
         System.out.println("Quiz Jogos Digitais" + "\n\n");
         //Início da QUESTÃO 1.
@@ -158,7 +158,7 @@ Também é semelhante a forma de receber uma entrada e armazenar em uma variáve
 
 As perguntas são verificadas através do comando `Switch-Case`:
 
-```
+```java
     switch(opcao){
         case "d":
             System.out.println("\nResposta correta! :)");
@@ -178,7 +178,7 @@ Após a execução do `Switch-Case` o console irá imprimir a próxima pergunta.
 
 Essa é a estrutura completa:
 
-```
+```java
     do{ 
         System.out.println("Quiz Jogos Digitais" + "\n\n");
         //Início da QUESTÃO 1.
@@ -206,21 +206,21 @@ Essa é a estrutura completa:
 
 Finalizada todas perguntas, será exibido o número total de erros e acertos: 
 
-```
+```java
     System.out.println("\nRespostas certas: " + acertos);
     System.out.println("Respostas erradas: " + erros + "\n");
 ```
 
 Em seguida haverá uma sequência de comandos solicitando ao usuário para decidir se deseja realizar o quiz novamente ou não.
 
-```
+```java
     System.out.println("\n\nDeseja refazer o quiz?\n[s] Sim\n[n] Não");
     System.out.print("Opção: ");
     opcao = sc.next().toLowerCase();
 ```
 A pontuação será zerada:
 
-```
+```java
     acertos = 0;
     erros = 0;
 ```
@@ -231,14 +231,14 @@ E a Limpeza do Console será executada.
 
 Com o fim dos comandos dentro do `Switch-Case` será impresso no console solicitando ao usuário para decidir se deseja encerrar o algoritmo ou não.
 
-```
+```java
     System.out.print("\n\nDeseja sair?\n[s] Sim\n[n] Não");
     volta = sc.next().toLowerCase(); 
 ```
 
 A variável `volta` serve para armazenar a entrada obtida para a repetição da Estrutura Principal.
 
-```
+```java
     do{
         // Algoritmo que inclui comandos/invocações de métodos
         // referentes ao menu principal e aos 
@@ -250,7 +250,7 @@ A variável `volta` serve para armazenar a entrada obtida para a repetição da 
 
 Caso o usuário deseje finalizar a execução, então será finalizado. Caso o usuário deseje continuar, a Estrutura Principal irá repetir.
 
-```
+```java
     do{
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -265,6 +265,6 @@ Caso o usuário deseje finalizar a execução, então será finalizado. Caso o u
 
 # Contribuidores
    
-    * [André Mendes](https://github.com/MrFagothz).
-    * [Edelin Chaves](https://github.com/ede-ch).
-    * [Luan Evander](https://github.com/LuanEvander).
+* [André Mendes](https://github.com/MrFagothz).
+* [Edelin Chaves](https://github.com/ede-ch).
+* [Luan Evander](https://github.com/LuanEvander).

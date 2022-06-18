@@ -1,6 +1,3 @@
-// Esse algoritmo está em repositório para download
-// https://github.com/LuanEvander/trabalhoGrupoAlgoritmos
-
 import java.util.Scanner;
 
 public class Main{
@@ -9,10 +6,10 @@ public class Main{
         try(Scanner sc = new Scanner(System.in)){
             int acertos = 0, erros = 0;
             
-            // Variáveis String para entradas do usuário
+            // Variáveis tipo String para entradas do usuário
             String opcao, volta;
             
-            // Bloco dos menus
+            // Estrutura principal
             do{ 
                 // Instruções para limpar o console
                 System.out.print("\033[H\033[2J");
@@ -72,7 +69,7 @@ public class Main{
                                 break;
                             }// Fim da segunda pergunta
                             
-                            //T erceira pergunta
+                            // Terceira pergunta
                             System.out.println("3 - Equipes de Formula 1 têm contratado pilotos cada vez mais jovens. Quantos anos tinha o piloto mais jovem a vencer uma corrida de Formula 1?\na) 16\nb) 21\nc) 18\nd) 24");
                             System.out.print("Opção: ");
                             opcao = sc.next().toLowerCase();
@@ -128,6 +125,7 @@ public class Main{
                                     System.out.println("\nResposta inválida.\n");
                                 break;
                             }// Fim da quinta pergunta
+
                             // Fim do Quiz sobre Formula 1
                             
                             // Resultado do quiz
@@ -217,7 +215,7 @@ public class Main{
                                 break; 
                             }// Fim da terceira pergunta
                             
-                            // Quarta Pergunta
+                            // Quarta pergunta
                             System.out.println("\nQuestão 4: \nQuem é o autor da frase \"Tudo flui\"?\n\na)Heraclito  \nb)Epiteto  \nc)Parmindes  \nd)Zenao de Heleia");
                             System.out.print("Digite sua resposta:");
                             opcao = sc.next().toLowerCase();
@@ -258,6 +256,7 @@ public class Main{
                                     System.out.println("\nResposta inválida." + "\n");
                                 break; 
                             }// Fim da quinta pergunta
+                            
                             // Fim do Quiz sobre Filosofia
                             
                             // Resultado do quiz
@@ -383,6 +382,7 @@ public class Main{
                                 break;
 
                             }// Fim da QUESTÃ0 5.
+                            
                             // Fim do Quiz sobre Jogos
 
                             // Resultado do Quiz.
