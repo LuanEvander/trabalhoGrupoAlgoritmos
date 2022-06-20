@@ -1,6 +1,6 @@
 # Introdução
 
-Este é um algoritmo em linguagem Java que apresenta ao usuário opções de temas com cinco questões cada.
+Este é um algoritmo em linguagem Java que exibe questões com respostas de múltipla escolha. Consistem em três temas com cinco perguntas e uma série de alternativas, dentre as quais apenas uma é a correta.
 
 ## Estrutura do Arquivo
 
@@ -15,7 +15,7 @@ Enquanto isso, os arquivos de saída compilados serão gerados na pasta `bin` po
 
 # Tour pelo algoritmo
 
-Esse documento irá detalhar o funcionamento do algoritmo usado nesse repositório. O algoritmo será explicado de forma linear, seguindo uma ordem de execução. Para fins de praticidade, estruturas de código semelhantes serão abordadas uma vez.
+Esse documento irá detalhar o funcionamento do algoritmo usado nesse repositório. O algoritmo será explicado seguindo uma das possíveis formas de uso e interação dentre as variadas formas.
 
 ## Bloco try
 
@@ -37,6 +37,8 @@ Nesse algoritmo o bloco try é usado na declaração da classe `Scanner`:
     }
 ```
 
+Para garantir que não haja poluição visual, a classe `Scanner` será armazenada na variável `sc` em detrimento de `entrada`.
+
 ## Variáveis
 
 O algoritmo possui duas variáveis para armazenar o resultado das respostas.
@@ -45,10 +47,16 @@ O algoritmo possui duas variáveis para armazenar o resultado das respostas.
     int acertos = 0, erros = 0;
 ```
 
-Duas variáveis são usadas para receber entradas do usuário.
+Duas variáveis são usadas para receber entradas do usuário e executar interações.
 
 ```java
     String opcao, volta;
+```
+
+E uma variável para conferir se a resposta é inválida.
+
+```java
+    boolean invalido;
 ```
 
 ## Estrutura de repetição principal
@@ -122,7 +130,7 @@ Para simular uso de métodos foi utilizado o comando `Switch-Case`. Esse comando
     }
 ```
 
-Vale ressaltar que no Menu de Temas uma entrada foi recebida, então, o `Switch-Case` será executado após a Limpeza do Console.
+Vale ressaltar que no Menu de Temas uma entrada foi armazenada na variável `opcao`, então, o `Switch-Case` será executado após a Limpeza do Console.
 
 ## Estrutura do quiz
 
@@ -140,15 +148,18 @@ A estrutura de repetição de um quiz é semelhante à estrutura de repetição 
 A forma de imprimir as perguntas no console é semelhante à forma de imprimir o Menu de Temas:
 
 ```java
-    do{ 
-        System.out.println("Quiz Jogos Digitais" + "\n\n");
-        //Início da QUESTÃO 1.
-        System.out.println("QUESTÃO 1. Rockstar Games é conhecida por ter criado grandes nomes dos jogos eletrônicos. Entre eles, qual jogo desta empresa é o mais popular?\n\n a) Red Dead Redemption 2  \n b) L.A Noire \n c) Bully \n d) Grand Theft Auto \n");
-        System.out.print("Informe sua resposta: ");
-        opcao = sc.next().toLowerCase();
+    do{
+        do{
+            System.out.println("Quiz Jogos Digitais" + "\n\n");
+            //Início da QUESTÃO 1.
+            System.out.println("QUESTÃO 1. Rockstar Games é conhecida por ter criado grandes nomes dos jogos eletrônicos. Entre eles, qual jogo desta empresa é o mais popular?\n\n a) Red Dead Redemption 2  \n b) L.A Noire \n c) Bully \n d) Grand Theft Auto \n");
+            System.out.print("Informe sua resposta: ");
+            opcao = sc.next().toLowerCase();
 
-        // Switch-Case das respostas
-        // Outras instruções
+            // Switch-Case das respostas
+            // Outras instruções
+        }while(invalido == true);
+        // Outras questões do quiz
     }while(opcao.equals("s"));
 ```
 
@@ -156,51 +167,58 @@ Também é semelhante a forma de receber uma entrada e armazenar em uma variáve
 
 ## Verificar respostas
 
-As perguntas são verificadas através do comando `Switch-Case`:
+As respostas são verificadas através do comando `Switch-Case`:
 
 ```java
     switch(opcao){
         case "d":
             System.out.println("\nResposta correta! :)");
-            acertos = acertos + 1; 
+            acertos = acertos + 1;
+            invalido = false; 
         break;  
         case "a": case "b": case "c": 
             System.out.println("\nAlternativa incorreta :( A resposta é: letra d!");  
             erros = erros + 1;
+            invalido = false;
         break;
         default:
             System.out.println("\nLETRA INVÁLIDA");
+            invalido = true;
         break;         
-
-    }//Fim da QUESTÃO 1.
+    }
 ```
 Após a execução do `Switch-Case` o console irá imprimir a próxima pergunta.
 
 Essa é a estrutura completa:
 
 ```java
-    do{ 
-        System.out.println("Quiz Jogos Digitais" + "\n\n");
-        //Início da QUESTÃO 1.
+    // Início da QUESTÃO 1.
+    do{
         System.out.println("QUESTÃO 1. Rockstar Games é conhecida por ter criado grandes nomes dos jogos eletrônicos. Entre eles, qual jogo desta empresa é o mais popular?\n\n a) Red Dead Redemption 2  \n b) L.A Noire \n c) Bully \n d) Grand Theft Auto \n");
         System.out.print("Informe sua resposta: ");
         opcao = sc.next().toLowerCase();
-
-            switch(opcao){
+        
+        switch(opcao){
             case "d":
                 System.out.println("\nResposta correta! :)");
-                acertos = acertos + 1; 
+                acertos = acertos + 1;
+                invalido = false; 
             break;  
             case "a": case "b": case "c": 
                 System.out.println("\nAlternativa incorreta :( A resposta é: letra d!");  
                 erros = erros + 1;
+                invalido = false;
             break;
             default:
                 System.out.println("\nLETRA INVÁLIDA");
+                invalido = true;
             break;         
-        }//Fim da QUESTÃO 1.
-    }while(opcao.equals("s"));
+        }
+    }while(invalido == true);
+        // Fim da QUESTÃO 1.
 ```
+
+Cada questão está aninhada em um `Do-While` que irá repetir enquanto o usuário não digitar uma entrada válida.
 
 ## Finalização do quiz
 
@@ -213,10 +231,21 @@ Finalizada todas perguntas, será exibido o número total de erros e acertos:
 
 Em seguida haverá uma sequência de comandos solicitando ao usuário para decidir se deseja realizar o quiz novamente ou não.
 
+Sua estrutura também irá repetir enquanto a entrada for inválida.
+
 ```java
-    System.out.println("\n\nDeseja refazer o quiz?\n[s] Sim\n[n] Não");
-    System.out.print("Opção: ");
-    opcao = sc.next().toLowerCase();
+    do{
+        System.out.println("\nDeseja refazer esse quiz?\n[s] Sim\n[n] Não");
+        System.out.print("Opção: ");
+        opcao = sc.next().toLowerCase();
+
+        if(opcao.equals("s") || opcao.equals("n")){
+            invalido = false;
+        }else{
+            invalido = true;
+            System.out.println("Inválido\n");
+        }
+    }while(invalido == true);
 ```
 A pontuação será zerada:
 
@@ -232,39 +261,45 @@ E a Limpeza do Console será executada.
 Com o fim dos comandos dentro do `Switch-Case` será impresso no console solicitando ao usuário para decidir se deseja encerrar o algoritmo ou não.
 
 ```java
-    System.out.print("\n\nDeseja sair?\n[s] Sim\n[n] Não");
-    volta = sc.next().toLowerCase(); 
+    do{
+        System.out.println("Deseja encerrar a execução do programa?\n[s] Sim\n[n] Não");
+        System.out.print("Opção: ");
+        volta = sc.next().toLowerCase();
+        
+            if(volta.equals("s") || volta.equals("n")){
+                invalido = false;
+            }else{
+                invalido = true;
+                System.out.println("Inválido\n");
+            }
+    }while(invalido == true);
 ```
 
 A variável `volta` serve para armazenar a entrada obtida para a repetição da Estrutura Principal.
 
 ```java
     do{
-        // Algoritmo que inclui comandos/invocações de métodos
-        // referentes ao menu principal e aos 
-        
-        System.out.print("\n\nDeseja sair?\n[s] Sim\n[n] Não");
-        volta = sc.next().toLowerCase(); 
+            // Algoritmo que inclui comandos/invocações de métodos
+            // referentes ao menu principal e aos quizes
+        do{
+            System.out.println("Deseja encerrar a execução do programa?\n[s] Sim\n[n] Não");
+            System.out.print("Opção: ");
+            volta = sc.next().toLowerCase();
+            
+                if(volta.equals("s") || volta.equals("n")){
+                    invalido = false;
+                }else{
+                    invalido = true;
+                    System.out.println("Inválido\n");
+                }
+        }while(invalido == true);
     }while(volta.equals("n"));
 ```
 
 Caso o usuário deseje finalizar a execução, então será finalizado. Caso o usuário deseje continuar, a Estrutura Principal irá repetir.
 
-```java
-    do{
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
-        // Algoritmo que inclui comandos/invocações de métodos
-        // referentes ao menu principal e aos 
-        
-        System.out.print("\n\nDeseja sair?\n[s] Sim\n[n] Não");
-        volta = sc.next().toLowerCase(); 
-    }while(volta.equals("n"));
-```
-
 # Contribuidores
    
-* [André Mendes](https://github.com/MrFagothz).
-* [Edelin Chaves](https://github.com/ede-ch).
-* [Luan Evander](https://github.com/LuanEvander).
+* [André Mendes](https://github.com/MrFagothz)
+* [Edelin Chaves](https://github.com/ede-ch)
+* [Luan Evander](https://github.com/LuanEvander)
